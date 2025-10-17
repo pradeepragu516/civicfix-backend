@@ -20,14 +20,11 @@ const discussionRoutes = require('./routes/discussions');
 // Middleware
 app.use(bodyParser.json({ limit: '10mb' }));
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://nimble-jelly-46c61c.netlify.app/'], // add both
+  origin: ['http://localhost:5173', 'https://nimble-jelly-46c61c.netlify.app'], // add both
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 };
-
-app.use(cors(corsOptions));
-
 
 app.use(cors(corsOptions));
 app.use('/api', reportRoutes);
